@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
     />
     <title>Releven</title>
     <link
@@ -39,7 +39,7 @@
   </head>
   <body>
     <div class="main-wrapper" id="mainWrapper">
-      <header class="header">
+      <header class="header" id="header">
         <div class="container">
           <div class="header-content">
             <div class="logo">
@@ -49,7 +49,7 @@
           </div>
         </div>
       </header>
-      <main>
+      <main id="main">
         <div class="container">
           <h1 class="title">Professional research services</h1>
           <h2 class="sub-title">
@@ -89,7 +89,7 @@
           </div>
         </div>
       </div>
-      <div class="logo-transparent">
+      <div class="logo-transparent" id="logoTransparent">
         <img src="images/logo-transparent.svg" alt="transparent logo" />
       </div>
       <div class="form-block hide" id="formBlock">
@@ -100,8 +100,26 @@
         <div class="form-container">
           <div class="form-wrapper">
             <form action="#" id="contactForm">
-              <input type="text" placeholder="Name" class="input" />
-              <input type="email" placeholder="Email" class="input" />
+              <div class="form-control">
+                <input
+                  type="text"
+                  placeholder="Name"
+                  class="input"
+                  id="username"
+                  name="name"
+                />
+                <small></small>
+              </div>
+              <div class="form-control">
+                <input
+                  type="email"
+                  placeholder="Email"
+                  class="input"
+                  id="email"
+                  name="email"
+                />
+                <small></small>
+              </div>
               <button type="submit" class="form-button">
                 <span class="form-button-text">Submit</span>
                 <svg

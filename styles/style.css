@@ -31,7 +31,7 @@ body {
   font-family: var(--fontRegular);
   background: var(--colorGreyGradient);
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
   z-index: 1;
   min-width: 320px;
   min-height: 667px;
@@ -54,9 +54,16 @@ main {
 
 button,
 input {
+  /* Remove First */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
   border: none;
   outline: none;
   background: transparent;
+  box-shadow: 0;
+  border-radius: 0;
 }
 
 ::-webkit-input-placeholder {
@@ -74,11 +81,13 @@ input {
 }
 
 .hide {
-  display: none;
+  /* display: none; */
+  transform: translateX(9000px);
 }
 
 .show {
-  display: block;
+  /* display: block; */
+  transform: translateX(0);
 }
 
 .main-wrapper {
@@ -112,13 +121,13 @@ input {
 }
 
 .title {
-  font: 56px var(--fontMedium);
+  font: 42px var(--fontMedium);
   line-height: 100%;
   margin-top: 20px;
 }
 
 .sub-title {
-  font-size: 32px;
+  font-size: 24px;
 }
 
 .link-manifest {
@@ -210,6 +219,7 @@ input {
   top: 0;
   bottom: 0;
   right: 0;
+  transition: transform .5s;
 }
 
 .close {
@@ -237,9 +247,9 @@ input {
   width: 100%;
   padding: 0 60px;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -40%);
 }
 
 .form-wrapper form {
@@ -251,7 +261,8 @@ input {
   color: var(--colorWhite);
 }
 
-.input, .form-button {
+.input,
+.form-button {
   padding: 20px 0;
   color: var(--colorWhite);
   border-bottom: 1px solid var(--colorWhite);
@@ -263,12 +274,39 @@ input {
   justify-content: space-between;
 }
 
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-control.success input {
+  border-color: limegreen;
+}
+
+.form-control small {
+  visibility: hidden;
+}
+
+.form-control.success small {
+  color: limegreen;
+}
+
+.form-control.error input {
+  border-color: orangered;
+}
+
+.form-control.error small {
+  color: orangered;
+  visibility: visible;
+}
+
 .agree {
   font-size: 14px;
   padding: 0 60px;
   color: var(--colorWhite50);
   position: absolute;
-  bottom: 30px;
+  bottom: 100px;
 }
 
 /* Media Queries */
@@ -304,7 +342,7 @@ input {
   }
   .contact-us {
     right: -330px;
-    bottom: -55px;
+    bottom: -220px;
   }
   .logo-transparent {
     left: -5px;
@@ -315,6 +353,9 @@ input {
   }
   .form-block {
     width: 50%;
+  }
+  .agree {
+    bottom: 30px;
   }
 }
 
@@ -347,5 +388,11 @@ input {
   .contact-us {
     right: -197px;
     bottom: -150px;
+  }
+}
+
+@media screen and (max-height: 844px) {
+  .contact-us {
+    bottom: -350px;
   }
 }
