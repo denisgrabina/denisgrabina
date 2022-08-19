@@ -1,0 +1,22 @@
+{
+  "name": "releven-land",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Releven Land stub",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/releven-land"
+  },
+  "author": "lemonetrambone",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/releven-land"
+  },
+  "devDependencies": {
+    "live-server": "^1.1.0"
+  }
+}
