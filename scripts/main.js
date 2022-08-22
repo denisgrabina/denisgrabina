@@ -18,11 +18,18 @@ const formBlockClose = () => {
   formBlock.classList.add("hide");
 };
 
-mainWrapper.addEventListener("click", (e) => {
-  if (e.target.id === "contactUs") {
-    formBlockOpen();
-  }
-});
+/* 
+  This 'commented' eventListener handler will be used for 
+  click on text 'Send Email' at footer.
+  For correct work, need to add id to element with value: "contactUs"
+  and uncomment this code below:
+*/
+
+// mainWrapper.addEventListener("click", (e) => {
+//   if (e.target.id === "contactUs") {
+//     formBlockOpen();
+//   }
+// });
 
 close.addEventListener("click", formBlockClose);
 

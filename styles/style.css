@@ -10,6 +10,8 @@
   --colorBlack: #000000;
   --colorWhite: #ffffff;
   --colorWhite50: rgba(255, 255, 255, 0.5);
+  --colorOrangered: #ff4500;
+  --colorLimegreen: #32cd32;
   --colorGreyGradient: linear-gradient(to left, #dceafa, #557171);
 }
 
@@ -236,7 +238,7 @@ input {
   animation: bounce-1 2.5s linear infinite;
 }
 
-.contact-us-button {
+a.contact-us-button {
   font-family: var(--fontMedium);
   background-color: var(--colorPrimary);
   width: 168px;
@@ -245,6 +247,10 @@ input {
   margin: auto;
   text-align: center;
   vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
 }
 
 .logo-transparent {
@@ -331,7 +337,7 @@ input {
 }
 
 .form-control.success input {
-  border-color: limegreen;
+  border-color: var(--colorLimegreen);
 }
 
 .form-control small {
@@ -339,15 +345,15 @@ input {
 }
 
 .form-control.success small {
-  color: limegreen;
+  color: var(--colorLimegreen);
 }
 
 .form-control.error input {
-  border-color: orangered;
+  border-color: var(--colorOrangered);
 }
 
 .form-control.error small {
-  color: orangered;
+  color: var(--colorOrangered);
   visibility: visible;
 }
 
