@@ -97,7 +97,7 @@ input {
 }
 
 .container {
-  padding: 0 35px;
+  padding: 0 10%;
   margin: 0 auto;
   width: 100%;
 }
@@ -137,6 +137,50 @@ input {
   align-items: center;
   padding: 20px 0 25px;
   border-bottom: 1px solid;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+}
+
+.link-manifest:after,
+.form-button:after {
+  width: 0%;
+  height: 1px;
+  position: absolute;
+  background: var(--colorPrimary);
+  transition: width 0.4s ease-in-out;
+  content: " ";
+}
+
+.link-manifest:after,
+.form-button:after {
+  bottom: -2px;
+}
+.link-manifest:hover,
+.form-button:hover {
+  border-color: var(--colorPrimary);
+  color: var(--colorPrimary);
+}
+
+.form-button:hover > span {
+  border-color: var(--colorPrimary);
+  color: var(--colorPrimary);
+}
+
+.link-manifest:hover:after,
+.form-button:hover:after {
+  width: 100%;
+}
+
+.link-manifest path,
+.form-button path,
+.form-button > span {
+  transition: all 0.4s ease-in-out;
+}
+
+.link-manifest:hover path,
+.form-button:hover path {
+  fill: var(--colorPrimary);
+  stroke: var(--colorPrimary);
 }
 
 .link-text {
@@ -166,6 +210,7 @@ input {
   margin: auto;
   width: 999px;
   height: 999px;
+  animation: bounce-4 2.5s linear infinite;
 }
 
 .circle-3 {
@@ -173,6 +218,7 @@ input {
   margin: auto;
   width: 795px;
   height: 795px;
+  animation: bounce-3 2.5s linear infinite;
 }
 
 .circle-2 {
@@ -180,12 +226,14 @@ input {
   margin: auto;
   width: 577px;
   height: 577px;
+  animation: bounce-2 2.5s linear infinite;
 }
 
 .circle-1 {
   margin: auto;
   width: 368px;
   height: 368px;
+  animation: bounce-1 2.5s linear infinite;
 }
 
 .contact-us-button {
@@ -219,7 +267,7 @@ input {
   top: 0;
   bottom: 0;
   right: 0;
-  transition: transform .5s;
+  transition: transform 0.5s;
 }
 
 .close {
@@ -266,6 +314,8 @@ input {
   padding: 20px 0;
   color: var(--colorWhite);
   border-bottom: 1px solid var(--colorWhite);
+  transition: all 0.4s ease-in-out;
+  position: relative;
 }
 
 .form-button {
@@ -311,17 +361,7 @@ input {
 
 /* Media Queries */
 
-@media screen and (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
-
 @media screen and (min-width: 768px) {
-  .container {
-    max-width: 735px;
-    padding: 0 45px;
-  }
   .logo img {
     width: 138px;
     height: 32px;
@@ -366,10 +406,6 @@ input {
 }
 
 @media screen and (min-width: 1274px) {
-  .container {
-    max-width: 1055px;
-    padding: 0 112px;
-  }
   .title {
     max-width: 855px;
   }
@@ -381,10 +417,6 @@ input {
   }
 }
 @media screen and (min-width: 1400px) {
-  .container {
-    max-width: 1194px;
-    padding: 0 122px;
-  }
   .contact-us {
     right: -197px;
     bottom: -150px;

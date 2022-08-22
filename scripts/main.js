@@ -4,6 +4,7 @@ const close = document.getElementById("close");
 const form = document.getElementById("contactForm");
 const userName = document.getElementById("username");
 const email = document.getElementById("email");
+const head = document.getElementsByTagName("head")[0];
 
 // Form block toggle
 
@@ -58,11 +59,11 @@ const checkLength = (input, min, max) => {
   }
   if (input.value.length > max) {
     showError(input, `${input.name} more than ${max} letters`);
-    return false
+    return false;
   }
   if (input.value.length >= min && input.value.length <= max)
     showSuccess(input);
-    return true;
+  return true;
 };
 
 form.addEventListener("submit", (e) => {
@@ -70,8 +71,41 @@ form.addEventListener("submit", (e) => {
 
   const isNameValid = checkLength(userName, 3, 25);
   const isEmailValid = checkEmail(email);
- 
+
   if (isNameValid && isEmailValid) {
-    console.log(12);
+    // submit form logic
   }
+});
+
+const style = document.createElement("style");
+head.appendChild(style);
+const circle1 = document.querySelector(".circle-1");
+const circle2 = document.querySelector(".circle-2");
+const circle3 = document.querySelector(".circle-3");
+const circle4 = document.querySelector(".circle-4");
+
+const circles = [circle1, circle2, circle3, circle4];
+
+const createKeyframe = (w, h, currentCircle) => {
+  styles = `
+    @keyframes bounce-${currentCircle} {
+      0%, 100% {
+        width: calc(${w} - 20px);
+        height: calc(${h} - 20px);
+      }
+      50% {
+        width: calc(${w} + 20px);
+        height: calc(${h} + 20px);
+      }
+    }
+  `;
+
+  style.textContent += styles;
+};
+
+circles.forEach((circle, i) => {
+  const w = window.getComputedStyle(circle, null).getPropertyValue("width");
+  const h = window.getComputedStyle(circle, null).getPropertyValue("height");
+  currentCircle = i + 1;
+  createKeyframe(w, h, currentCircle);
 });
