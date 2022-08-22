@@ -7,7 +7,6 @@ const email = document.getElementById("email");
 const head = document.getElementsByTagName("head")[0];
 
 // Form block toggle
-
 const formBlockOpen = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
   formBlock.classList.remove("hide");
@@ -77,6 +76,7 @@ form.addEventListener("submit", (e) => {
   }
 });
 
+// Animation for circles
 const style = document.createElement("style");
 head.appendChild(style);
 const circle1 = document.querySelector(".circle-1");
